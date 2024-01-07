@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function display(){
+            var i = 1;
+            document.getElementById("msg").innerHTML = i;
+            setInterval(function () {
+                i++;
+                document.getElementById("msg").innerHTML = i;
+            }, 2000)
+        }
+       
+    </script>
+</head>
+<body onload="display()">
+    <h1 id="msg"></h1>
+
+</body>
+</html>

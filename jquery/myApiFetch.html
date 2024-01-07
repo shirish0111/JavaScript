@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../Bootstrap Files/js/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            GetData();
+            $("#btnsubmit").click(function () {
+                AddData();
+
+            });
+       /*     $("#btnupdate").click(function () {
+                UpdateData();
+            })*/
+
+        });
+        function GetData() {
+            $.ajax({
+                url: 'http://localhost:9460/WebApis/api/Sample',
+                method: 'GET',
+                contentType: 'application/json',
+                success: function (resp) {
+                    $("#tbldata").empty();
+                    $.each(resp, function (i, d) {
+                        $("#tbldata").append("<tr><td>" + d.rno + "</td><td>" + d.name + "</td><td>" + d.address_city + "</td><td>" + d.mobile_number + "</td><td>" + d.email_address + "</td></tr>");
+                    });
+                }
+            });
+        }
+
+        function AddData() {
+            var r = $("#1").val();
+            var n = $("#2").val();
+            var a = $("#3").val();
+            var m = $("#4").val();
+            var e = $("#5").val();
+
+            var st = {
+                "rno": r,
+                "name": n,
+                "address_city": a,
+                "mobile_number": m,
+                "email_address": e
+            };
+            $.ajax({
+                url: 'http://localhost:9460/WebApis/api/Student',
+                method: 'post',
+                data: JSON.stringify(st),
+                contentType: 'application/json',
+                success: function (resp) {
+                    GetData();
+                    ClearData();
+                }
+            });
+        }
+        function ClearData() {
+            $("#1").val("");
+            $("#2").val("");
+            $("#3").val("");
+            $("#4").val("");
+            $("#5").val("");
+
+        }
+    </script>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>RNo</th>
+                <td><input type="text" id="1" /></td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td><input type="text" id="2" /></td>
+            </tr>
+            <tr>
+                <th>Address City</th>
+                <td><input type="text" id="3" /></td>
+            </tr>
+            <tr>
+                <th>Mobile Number</th>
+                <td><input type="text" id="4" /></td>
+            </tr>
+            <tr>
+                <th>Email Address</th>
+                <td><input type="text" id="5" /></td>
+            </tr>
+            <tr>
+                <th>
+                    <input type="button" value="Submit" id="btnsubmit" />&nbsp;
+                    <input type="button" value="Update" id="btnupdate" />
+                </th>
+            </tr>
+
+        </thead>
+    </table>
+    <table border='1'>
+        <thead>
+            <tr>
+                <th>RNo</th>
+                <th>Name</th>
+                <th>Address City</th>
+                <th>Mobile Number</th>
+                <th>Email Address</th>
+            </tr>
+        </thead>
+        <tbody id="tbldata"></tbody>
+    </table>
+</body>
+</html>

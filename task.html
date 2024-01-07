@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var student = [];
+        function AddData() {
+            var a = Number(document.getElementById("1").value);
+            var b = Number(document.getElementById("2").value);
+            var c = Number(document.getElementById("3").value);
+            var total = (a + b + c);
+            var per = total / 3;
+            var res = "fail";
+            if (per >= 35) {
+                res = "pass";
+            }
+            var st = { "Sub1": a, "Sub2": b, "Sub3": c, "total": total, "percentage": per, "result": res };
+            student.push(st);
+            ClearData();
+            DisplayData();
+        }
+        function ClearData() {
+            document.getElementById("1").value= "";
+            document.getElementById("2").value= "";
+            document.getElementById("3").value="";
+
+        }
+        function DisplayData() {
+            var data = "";
+            for (i = 0; i < student.length; i++) {
+                data += "<tr><td>" + student[i].Sub1 + "</td><td>" + student[i].Sub2 + "</td><td>" + student[i].Sub3 + "</td><td>" + student[i].total + "</td><td>" + student[i].percentage + "</td><td>" + student[i].result + "</td></tr>";
+            }
+            document.getElementById("a1").innerHTML = data;
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Subject1</th>
+            <td><input type="text" id="1" /></td>
+        </tr>
+        <tr>
+            <th>Subject2</th>
+            <td><input type="text" id="2" /></td>
+        </tr>
+        <tr>
+            <th>Subject3</th>
+            <td><input type="text" id="3" /></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="Enter" onclick="AddData()" /></td>
+        </tr>
+    </table>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Subject1</th>
+                <th>Subject2</th>
+                <th>Subject3</th>
+                <th>Total</th>
+                <th>Percentage</th>
+                <th>Result</th>
+
+            </tr>
+        </thead>
+        <tbody id="a1">
+
+        </tbody>
+
+        
+    </table>
+</body>
+</html>

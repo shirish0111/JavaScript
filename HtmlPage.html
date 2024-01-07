@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="../Bootstrap Files/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="../Bootstrap Files/js/bootstrap.mi.js"></script>
+    <script src="../Bootstrap Files/js/jquery.min.js"></script>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function Checklogin() {
+            var u = document.getElementById("k").value;
+            var p = document.getElementById("k2").value;
+            if (u == 'suraj' && p == '12345') {
+                localStorage.setItem("username", 'u');
+                alert("login success!")
+                window.location.href = 'validate form.html';
+            }
+            else {
+                alert("login failed! enter correct username or password");
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+   <table border="1">
+        <thead>
+            <tr>
+                <th>Username:</th>
+                <td><input type="text" placeholder="enter your username" id="k" /></td> 
+            </tr>
+            <tr>
+                <th>Password:</th>
+                <td><input type="password" placeholder="enter your password" id="k2"/></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td><input type="button" value="login" onclick="Checklogin()" /></td></tr>
+        </tbody>
+    </table>
+   <!-- <div class="panel panel-danger" id="d1">
+        <div class="panel panel-heading">
+            <div class=" panel-title">
+                Login page
+            </div>
+            
+        </div>
+        <div class="panel-body" id="d2">
+            <label>Username:</label><br/>
+            <input type="text" placeholder="enter valid username" id="k" class="form-control"/><br />
+            <label>Password:</label><br />
+            <input type="password" placeholder="enter valid password" id="k2" class="form-control"/><br />
+        </div>
+        <div class="panel-footer">
+            <button class="btn btn-success"
+                    onclick="Checklogin()">LOGIN</button>
+        </div>
+    </div>-->
+
+</body>
+</html>

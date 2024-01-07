@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var total=0, totalyes=0, totalno=0;
+        function display() {
+            var a = document.getElementById("abc");
+            var b = document.getElementById("xyz");
+            if (a.checked) {
+                totalyes++
+            }
+            else {
+                if (b.checked) {
+                    totalno++
+                }
+                else {
+                    alert("Please choose any one!");
+                }
+            }
+            total = totalyes + totalno;
+            document.getElementById("1").innerHTML ="<h1 style='color:green;'>totalyes=</h1>" +totalyes;
+            document.getElementById("2").innerHTML = "<h1 style='color:red;'>totalno=</h1>"+totalno;
+            document.getElementById("3").innerHTML = "<h1 style='color:blue;'>total=</h1>"+total;
+        }
+    </script>
+</head>
+<body>
+    <h1>Do you know HTML?</h1><br />
+    <input type="radio" name="ab"  id="abc"/>Yes<br />
+    <input type="radio" name="ab" id="xyz" />No<br />
+    <input type="button" value="getcount" onclick="display()" />
+    <h1 id="1"></h1>
+    <h1 id="2"></h1>
+    <h1 id="3"></h1>
+</body>
+</html>

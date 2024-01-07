@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var student = [];
+        var index = -1;
+
+        function AddData() {
+            var r = document.getElementById("t1").value;
+            var n = document.getElementById("t2").value;
+            var st = { "rollno": r, "name": n };
+            student.push(st);
+            ClearData();
+            DisplayData();
+        }
+
+        function ClearData() {
+            document.getElementById("t1").value = "";
+            document.getElementById("t2").value = "";
+        }
+
+        function DisplayData() {
+            var data = "";
+            student.forEach(function (d, i) {
+                data += "<tr><td>" + d.rollno + "</td><td>" + d.name + "</td><td>" +
+                    "<input type='button' value='Edit' onclick='EditData(" + i + ")'/>" +
+                    "<input type='button' value='Delete' onclick='DeleteData(" + i +   /")'/></td></tr>";
+            });
+            document.getElementById("tbldata").innerHTML = data;
+        }
+
+        function DeleteData(f) {
+            student.splice(f, 1);
+            DisplayData();
+        }
+
+        function EditData(p) {
+            index = p;
+            var s = student[p];
+            document.getElementById("t1").value = s.rollno;
+            document.getElementById("t2").value = s.name;
+        }
+
+        function UpdateData() {
+            if (index !== -1) {
+                var r = document.getElementById("t1").value;
+                var n = document.getElementById("t2").value;
+                student[index] = { "rollno": r, "name": n };
+                ClearData();
+                index = -1;
+                DisplayData();
+            } else {
+                AddData();
+            }
+        }
+    </script>
+</head>
+<body>
+    <label>Roll No</label><br />
+    <input type="text" placeholder="enter roll no" id="t1" /><br />
+    <label>Name</label><br />
+    <input type="text" placeholder="enter name" id="t2" /><br />
+    <input type="button" value="Update" onclick="UpdateData()" />
+    <input type="button" value="Submit" onclick="AddData()" />
+    <hr />
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Roll No</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="tbldata"></tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function Display(){
+            var a = Number(document.getElementById("num1").value);
+            var b = Number(document.getElementById("num2").value);
+            var c = Number(document.getElementById("num3").value);
+            var d = Number(document.getElementById("num4").value);
+            var e = Number(document.getElementById("num5").value);
+            var f = Number(document.getElementById("num6").value); 
+            var g = a + b + c + d + e + f;
+            document.getElementById("aaa").innerHTML="addition="+g;
+        }
+    </script>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>English: </th>
+            <td><input type="text" id="num1" /></td>
+        </tr>
+        <tr>
+            <th>Marathi: </th>
+            <td><input type="text" id="num2" /></td>
+
+        </tr>
+        <tr>
+            <th>Hindi: </th>
+            <td><input type="text" id="num3" /></td>
+        </tr>
+        <tr>
+            <th>Geography</th>
+            <td><input type="text" id="num4" /></td>
+        </tr>
+        <tr>
+            <th>Maths: </th>
+            <td><input type="text" id="num5" /></td>
+
+        </tr>
+        <tr>
+            <th>Physics: </th>
+            <td><input type="text" id="num6" /></td>
+        </tr>
+
+    </table>
+    <input type="button" value="getsum" onclick="Display()" />
+    <h1 id="aaa"></h1>
+</body>
+</html>

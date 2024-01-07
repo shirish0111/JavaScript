@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../Bootstrap Files/js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("#btnstart").click(function () {
+                var i = 1;
+                while (i <= 5) {
+                    $("#div").animate({ "left": "1200px" });
+                    $("#div").animate({ "top": "680px" });
+                    $("#div").animate({ "left": "40px" });
+                    $("#div").animate({ "top": "20px" });
+                    i++;
+                }
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <input type="button" value="Start" id="btnstart" />
+    <hr />
+    
+    <h1 style="color:red;position:absolute" id="div" scrollamount="10">WELCOME TO CIIT</h1>
+</body>
+</html>

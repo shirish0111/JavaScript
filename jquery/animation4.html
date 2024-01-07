@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>jquery anmation</title>
+    <script src="../Bootstrap Files/js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("#btnslideup").click(function () {
+                $("#div").slideUp(5000);
+            })
+
+            $("#btnslidedown").click(function () {
+                $("#div").slideDown(1000);
+            })
+
+            $("#btnslidetoggle").click(function () {
+                $("#div").slideToggle(1000);
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <input type="button" value="SlideUp" id="btnslideup" />
+    <input type="button" value="SlideDown" id="btnslidedown" />
+    <input type="button" value="SlideToggle" id="btnslidetoggle" />
+    <hr />
+    <img style="height:300px;width:400px" id="div" src="missileman.jpeg" />
+
+</body>
+</html>

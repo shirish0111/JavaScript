@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function setData() {
+            localStorage.setItem("username", 'suraj');
+            alert("data stored sucessfully")
+        }
+        function getData() {
+            var name = localStorage.getItem("username");
+            document.getElementById("data").innerHTML = 'welcome  '+name;
+        }
+        function removeData() {
+            localStorage.removeItem("username");
+            alert("removed")
+            getData();
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="setData" onclick="setData()" />
+    <input type="button" value="getData" onclick="getData()" />
+    <input type="button" value="removeData" onclick="removeData()" />
+    <h1 id="data"></h1>
+
+</body>
+</html>

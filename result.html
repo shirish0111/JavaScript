@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function display_result() {
+            var a = Number(document.getElementById("eng").value);
+            var b = Number(document.getElementById("mar").value);
+            var c = Number(document.getElementById("mat").value);
+            var d = Number(document.getElementById("hin").value);
+            var f = Number(document.getElementById("geo").value);
+            var e = Number(document.getElementById("his").value);
+            var total = a + b + c + d + f + e;
+            document.getElementById("abc").innerHTML = total;
+
+            var per = (total / 6).toFixed(2);
+            document.getElementById("xyz").innerHTML = per;
+            if (per >= 35) {
+                document.getElementById("pqr").innerHTML = "<h3 style='color:green;'>Pass</h3>";
+            }
+            else {
+                document.getElementById("pqr").innerHTML = "<h3 style='color:red;'>Fail</h3>";
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>Name:</th>
+            <th><input type="text" placeholder="Enter student name" /></th>
+        </tr>
+        <tr>
+            <th>Marks</th>
+            <th>Subjects</th>
+        </tr>
+        <tr>
+            <td>English</td>
+            <td><input type="text" id="eng" /></td>
+        </tr>
+        <tr>
+            <td>Marathi</td>
+            <td><input type="text" id="mar" /></td>
+        </tr>
+        <tr>
+            <td>Mathematics</td>
+            <td><input type="text" id="mat" /></td>
+        </tr>
+        <tr>
+            <td>Hindi</td>
+            <td><input type="text" id="hin" /></td>
+        </tr>
+        <tr>
+            <td>Geography</td>
+            <td><input type="text" id="geo" /></td>
+        </tr>
+        <tr>
+            <td>History</td>
+            <td><input type="text" id="his" /></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="Enter"  onclick="display_result()"/></td>
+        </tr>
+        <tr>
+            <td><h1 id="abc"></h1></td>
+            <td><h2 id="xyz"></h2></td>
+            <td><h3 id="pqr"></h3></td>
+        </tr>
+        
+
+    </table>
+</body>
+</html>

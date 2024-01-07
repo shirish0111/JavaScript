@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>voting eligibility</title>
+    <script>
+        function display_Eligibility() {
+            var a = Number(document.getElementById("age").value);
+            if (a >= 18) {
+                document.getElementById("abc").innerHTML = "<h1 style='color:green;'>Eligible for voting</h1>";
+            }
+            else {
+                document.getElementById("abc").innerHTML = "<h1 style='color:red;'>Not Eligible for voting</h1>";
+            }
+        }
+    </script>
+</head>
+<body>
+    <label>Name:</label><br />
+    <input type="text" placeholder="enter your name" /><br />
+    <label>Age:</label><br />
+    <input type="text" max="100" min="0" placeholder="enter your age" id="age" />
+    <input type="button" value="check eligiblity" onclick="display_Eligibility()" />
+    <h1 id="abc"></h1>
+</body>
+</html>

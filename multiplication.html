@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function abc() {
+            var a = Number(document.getElementById("t1").value);
+            var b = Number(document.getElementById("t2").value);
+            var c = Number(document.getElementById("t3").value);
+            var data = "";
+            for (i = a; i <= b; i = i + c) {
+                data += "<h1>" + i + "<h1>";
+            }
+            document.getElementById("a1").innerHTML = data;
+        }
+    </script>
+</head>
+<body>
+
+    <table border="1">
+        <tr>
+            <th>Initial</th>
+            <th><input type="text" id="t1" /></th>
+        </tr>
+        <tr>
+            <th>Condition</th>
+            <th><input type="text" id="t2" /></th>
+        </tr>
+        <tr>
+            <th>Increament</th>
+            <th><input type="text" id="t3" /></th>
+        </tr>
+        <tr>
+            <th><input type="button" value="loop" onclick="abc()" /></th>
+        </tr>
+    </table>
+
+    <h1 id="a1"></h1>
+
+
+</body>
+</html>

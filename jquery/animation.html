@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../Bootstrap Files/js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btnhide").click(function () {
+                $("#div").hide();
+            })
+            $("#btnshow").click(function () {
+                $("#div").show();
+            })
+            $("#btntoggle").click(function () {
+                $("#div").toggle();
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <input type="button" value="hide" id="btnhide" />
+    <input type="button" value="show" id="btnshow" />
+    <input type="button" value="toggle" id="btntoggle" />
+    <hr />
+    <img style="height:300px;width:300px;" id="div" src="missileman.jpeg"/>
+</body>
+</html>

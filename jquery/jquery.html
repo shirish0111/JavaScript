@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="../Bootstrap Files/js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btnadd").click(function () {
+                var a = Number($("#t1").val());
+                var b = Number($("#t2").val());
+                var c = a + b;
+
+                $("#a1").html("ADD=" + c);
+            })
+            $("#btnsub").click(function () {
+                var a = Number($("#t1").val());
+                var b = Number($("#t2").val());
+                var c = a- b;
+                $("#a2").html("SUB=" + c);
+            })
+            $("#btnmulti").click(function () {
+                var a = Number($("#t1").val());
+                var b = Number($("#t2").val());
+                var c = a * b;
+                $("#a3").html("Multiplication=" + c);
+            })
+            $("#btndiv").click(function () {
+                var a = Number($("#t1").val());
+                var b = Number($("#t2").val());
+                var c = a / b;
+                $("#a4").html("Division=" + c);
+            })
+        })
+
+    </script>
+</head>
+<body>
+    num1 <input type="text" id="t1" /><br />
+    num2 <input type="text" id="t2" /><br />
+
+    <input type="button" value="Add" id="btnadd" />
+    <input type="button" value="SUB" id="btnsub" />
+    <input type="button" value="Multi" id="btnmulti" />
+    <input type="button" value="Div" id="btndiv" />
+    <h1 id="a3"></h1>
+    <h1 id="a4"></h1>
+    <h1 id="a1"></h1>
+    <h1 id="a2"></h1>
+</body>
+</html>

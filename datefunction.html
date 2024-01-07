@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+   
+    <script>
+        function Display() {
+            var dt = new Date();
+            document.getElementById("a1").innerHTML = dt.toString();
+            document.getElementById("a2").innerHTML = dt.toDateString();
+            document.getElementById("a3").innerHTML = dt.toLocaleDateString();
+            document.getElementById("a4").innerHTML = dt.toTimeString();
+            document.getElementById("a5").innerHTML = dt.toLocaleTimeString();
+            document.getElementById("a6").innerHTML = dt.getFullYear();
+            document.getElementById("a7").innerHTML = (dt.getMonth()+1);
+            document.getElementById("a8").innerHTML = dt.getDay();
+            document.getElementById("a9").innerHTML = dt.getHours();
+            document.getElementById("11").innerHTML = dt.getMinutes();
+            document.getElementById("a12").innerHTML = dt.getSeconds();
+        }
+    </script>
+    </head>
+    <body onload="Display()">
+        <h1 id="a1"></h1>
+        <h1 id="a2"></h1>
+        <h1 id="a3"></h1>
+        <h1 id="a4"></h1>
+        <h1 id="a5"></h1>
+        <h1 id="a6"></h1>
+        <h1 id="a7"></h1>
+        <h1 id="a8"></h1>
+        <h1 id="a9"></h1>
+        <h1 id="11"></h1>
+        <h1 id="a12"></h1>
+
+
+
+
+
+
+
+
+    </body>
+</html>

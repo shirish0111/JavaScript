@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function display() {
+            var i = Number(document.getElementById("num1").value);
+            if (i % 2 == 0) {
+                document.getElementById("abc").innerHTML = "<h1 style='color:green'>number is even</h1>";
+
+            }
+            else {
+                document.getElementById("abc").innerHTML = "<h1 style='color:red;'>number is odd</h1>";
+            }
+        }
+    </script>
+</head>
+<body>
+    <label>Enter any number</label>
+    <input type="text" id="num1" />
+    <input type="button" value="enter" onclick="display()"/>
+
+    
+    <h1 id="abc"></h1>
+</body>
+</html>

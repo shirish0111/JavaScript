@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+    var a = [{ "rollno": 1, "Name": "Midoriya", "Marks": 89 },
+    { "rollno": 2, "Name": "Luffy", "Marks": 90 },
+    { "rollno": 3, "Name": "Anos", "Marks": 100 },
+        { "rollno": 4, "Name": "Light", "Marks": 98 }];
+    function Display() {
+        var data = "";
+        for (i = 0; i < a.length; i++) {
+            data += "<tr><td>" + a[i].rollno + "</td><td>" + a[i].Name + "</td><td>" + a[i].Marks + "</td></tr>";
+        }
+        document.getElementById("tbldata").innerHTML = data;
+    }
+    </script>
+</head>
+<body>
+    <div style="justify-content:center; margin-left:300px; margin-right:300px;margin-top:50px;">
+
+    <table border="1" >
+        <thead>
+            <tr>
+                <th>Roll No</th>
+                <th>Name</th>
+                <th>Marks</th>
+            </tr>
+        </thead>
+        <tbody id="tbldata"></tbody>
+    </table>
+    <input type="button" value="Display" onclick="Display()" />
+    </div>
+
+</body>
+</html>
+

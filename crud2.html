@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+
+        var state = [{ stateid: 1, statename: "MH" }, { stateid: 2, statename: "MP" }];
+
+        function ddstate() {
+            var data = "<option selected disabled>Select State</option>";
+            state.forEach(function (d, i) {
+                data += "<option value = " + d.stateid + ">" + d.statename + "</option>";
+            })
+            document.getElementById("ddstate").innerHTML = data;
+        }
+
+        var cities = [{ cityid: 1, cityname: "Pune", stateid: 1 }, { cityid: 2, cityname: "Mumbai", stateid: 1 },
+        { cityid: 3, cityname: "Indore", stateid: 2 }, { cityid: 4, cityname: "Bhopal", stateid: 2 }];
+
+        function city() {
+            var state = document.getElementById("ddstate").value;
+
+            var data = "<option selected disabled>Select City</option>";
+            cities.forEach(function (d, i) {
+                if (d.stateid == state) {
+                    data += "<option value=" + d.cityid + ">" + d.cityname + "</option>";
+                }
+            })
+            document.getElementById("ddcity").innerHTML = data;
+
+        }
+    </script>
+
+</head>
+<body onload="ddstate()">
+    <h1>State</h1>
+    <select id="ddstate" onchange="city()">
+    </select>
+
+    <h1>City</h1>
+    <select id="ddcity">
+        <option selected disabled>Select City</option>
+    </select>
+
+
+</body>
+</html>

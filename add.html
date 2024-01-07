@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function display() {
+            var a = Number(document.getElementById("num1").value);
+            var b = Number(document.getElementById("num2").value);
+            var c = a + b;
+            document.getElementById("abc").innerHTML="addition:"+c;
+        }
+    </script>
+
+
+</head>
+<body>
+    num1=<input type="text" id="num1" />
+    num2=<input type="text" id="num2" />
+    <input type="button" value="GetSub" onclick="display()"/>
+    <h1 id="abc"></h1>
+</body>
+</html>

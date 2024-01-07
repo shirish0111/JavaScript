@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        function calculate(x) {
+            var a = Number(document.getElementById("num1").value);
+            var b = Number(document.getElementById("num2").value);
+            var result = "";
+            switch (x) {
+                case 0: {
+                    var c = a + b;
+                    result = "addition" + c;
+                    break;
+                }
+                case 1: {
+                    var c = a - b;
+                    result = "subtraction" + c;
+                    break;
+                }
+                case 2: {
+                    var c = a * b;
+                    result = "multiplication" + c;
+                    break;
+                }
+                case 3: {
+                    var c = a / b;
+                    result = "division " + c;
+                    break;
+                }
+                default: {
+                    alert("you got wrong choice!");
+                    break;
+                }
+            }
+                    document.getElementById("abc").innerHTML = result;
+
+
+
+                    
+
+
+        }
+    </script>
+</head>
+<body>
+    Number1 <input type="text" placeholder="enter first number" id="num1" /><br />
+    Number2 <input type="text" placeholder="enter second number" id="num2"/><br />
+    <hr />
+    <input type="button" value="sum" onclick="calculate(0)" />
+    <input type="button" value="sub" onclick="calculate(1)" />
+    <input type="button" value="multiply" onclick="calculate(2)" />
+    <input type="button" value="division" onclick="calculate(3)" />
+    <input type="button" value="Click" onclick="calculate(4)" />
+    <h1 id="abc"></h1>
+</body>
+</html>

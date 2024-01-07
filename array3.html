@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input type="button" value="submit" onclick="display()" />
+    <ol type="a" id="x" ></ol>
+    <script>
+        function display() {
+            var data = ["mumbai", "nashik", "nagpur", "delhi", "patna", "haidrabad", "gandhinagar", "imphal"];
+            var cities = "";
+            for (i = 0; i < data.length; i++) {
+                cities += "<li>" + data[i] + "</li>";
+            }
+            document.getElementById("x").innerHTML = cities;
+        }
+    </script>
+</body>
+</html>

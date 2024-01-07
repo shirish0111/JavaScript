@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        var students = [];
+        function Display() {
+            var a = document.getElementById("1").value;
+            var b = document.getElementById("2").value;
+            var c = document.getElementById("3").value;
+            var st = { "RollNo": a, "Name": b, "Marks": c };
+            students.push(st);
+            ClearData();
+            DisplayData();
+        }
+        function ClearData() {
+            document.getElementById('1').value = "";
+            document.getElementById("2").value = "";
+            document.getElementById("3").value = "";
+
+        }
+        function DisplayData() {
+            var data = "";
+        
+            for (var i = 0; i < students.length; i++) {
+                data += "<tr><td>" + students[i].RollNo + "</td><td>" + students[i].Name + "</td><td>" + students[i].Marks + "</td><td><input type='button' value='x' onclick='remove("+i+")'/></td></tr>";
+            }
+            document.getElementById("tdata").innerHTML = data;
+
+        }
+        function remove(k) {
+
+            students.splice(k, 1);
+            DisplayData();
+        }
+    </script>
+</head>
+<body>
+    <table border="0">
+        
+            <tr>
+                <th>Roll No</th>
+                <td><input type="text" id="1" /></td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td><input type="text" id="2" /></td>
+            </tr>
+        <tr>
+            <td>Marks</td>
+            <td><input type="text" id="3" /></td>
+        </tr>
+        <tr>
+            <td> <input type="button" value="Enter" onclick="Display()" /></td>
+        </tr>
+        
+    </table>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Roll No</th>
+                <th>Name</th>
+                <th>Marks</th>
+
+            </tr>
+            
+        </thead>
+        <tbody id="tdata"></tbody>
+
+    </table>
+   
+
+</body>
+</html>
